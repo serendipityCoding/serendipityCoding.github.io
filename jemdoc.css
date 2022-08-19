@@ -237,6 +237,7 @@ p + ul, p + ol {
 
 li ul, li ol {
 	margin-top: -0.3em;
+	line-height: 1.4;
 }
 
 ol {
@@ -245,7 +246,8 @@ ol {
 }
 
 li p, dd p {
-	margin-bottom: 0.3em;
+	margin-bottom: 0.5em;
+	line-height: 1.4;
 }
 
 
@@ -293,6 +295,7 @@ div.infoblock p {
 
 div.infoblock li p, div.infoblock dd p {
 	margin-bottom: 0.5em;
+	line-height: 1.4;
 }
 
 div.infoblock p + p {
@@ -395,3 +398,19 @@ table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
 }
+
+button {
+	font-family: Georgia, serif;
+	background-color: #ffffff; /* Green */
+	border: none;
+	color: #527bbd;
+	padding: 0px 0px;
+	text-align: center;
+	text-decoration: underline;
+	display: inline-block;
+	font-size: 100%;
+	cursor: pointer;
+}
+
+#more1 {display: none;}
+#more2 {display: none;}

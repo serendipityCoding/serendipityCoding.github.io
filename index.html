@@ -10,6 +10,38 @@
 </head>
 
 <body data-gr-c-s-loaded="true">
+        <script>
+                function myFunction1() {
+                        var dots = document.getElementById("dots1");
+                        var moreText = document.getElementById("more1");
+                        var btnText = document.getElementById("myBtn1");
+
+                        if (dots.style.display === "none") {
+                        dots.style.display = "inline";
+                        btnText.innerHTML = "more"; 
+                        moreText.style.display = "none";
+                        } else {
+                        dots.style.display = "none";
+                        btnText.innerHTML = "less"; 
+                        moreText.style.display = "inline";
+                        }
+                }
+                function myFunction2() {
+                        var dots = document.getElementById("dots2");
+                        var moreText = document.getElementById("more2");
+                        var btnText = document.getElementById("myBtn2");
+
+                        if (dots.style.display === "none") {
+                        dots.style.display = "inline";
+                        btnText.innerHTML = "more"; 
+                        moreText.style.display = "none";
+                        } else {
+                        dots.style.display = "none";
+                        btnText.innerHTML = "less"; 
+                        moreText.style.display = "inline";
+                        }
+                }
+        </script>
         <div id="layout-content">
                 <!-- <p><img src="./res/portait_clearwater_bay.jpg" width="380px" align="right" style="margin:8px"></p> -->
                 <h1 style="margin-bottom:30px">Jiamin LI (李嘉敏)</h1>
@@ -17,7 +49,7 @@
                 <p><a href="https://www.cs.cityu.edu.hk/" target="_blank">Department of Computer Science</a><br>
                         <a href="https://www.cityu.edu.hk/" target="_blank">City University of Hong Kong</a>
                 </p>
-                <p><b>Email</b>: jiaminli.icy AT gmail.com<br></p>
+                <p><b>Email</b>: jiaminli.icy [at] gmail.com<br></p>
                 <p><b><a href="./cv_JiaminLI.pdf" target="_blank">Resume</a></b> (as of Jul. 2022)</p>
                 <a href="https://www.linkedin.com/in/jiamin-li-9998ab129/" target="_blank"><img src="./fig/LinkedIn_s.png"
                                 height="30px"></a>
@@ -89,7 +121,7 @@
                         <p>Supervised by <a href="http://yibozhu.com/" target="_blank">Yibo Zhu</a>.</p>
                         </li>
                         <li>
-                                <p>Organizations build separate training and inference GPU clusters for deep learning, and use separate schedulers to manage them. This leads to problems for both: inference clusters have low GPU utilization when the traffic load is low; training jobs often experience long queuing due to lack of resources. Lyra is an elastic GPU cluster scheduler for deep learning to address these problems. The key idea is to exploit cluster-level elasticity by loaning idle inferences servers for training, and job-level elasticity by scaling jobs to better utilize the dynamic resource pool.</p>
+                                <p>We design and implement Lyra, an elastic GPU cluster scheduler for deep learning to address these problems. The key idea is to exploit cluster-level elasticity by loaning idle inferences servers for training, and job-level elasticity by scaling jobs to better utilize the dynamic resource pool.</p>
                         </li>
                         <li>
                                 <p>May. 2019 - May 2021, Beijing, Shenzhen </p>
@@ -116,12 +148,58 @@
                                 <p>May. 2017 - May 2018, HKSAR </p>
                         </li>
                 </ul>
-</font>
+                <h2>Projects</h2>
+                <h4>Accelerating Mixture-of-Experts models (ongoing)</h4>
+                <ul>
+                        <li> <p> Collaborated with ByteDance</p> </li>
+                        <li> <p> Lina, a new system that accelerates all-to-all in distributed training of large MoE models. </p></li>
+                        <li><p> Abstract: Scaling model parameters usually improves model quality, but at the price of high computation overhead. Sparsely activated models, usually in the form of Mixture of Experts (MoE) architecture, have constant computation cost over their dense counterparts, thus providing opportunities to train and serve a large model at a reasonable cost.<span id="dots2">..</span><span id="more2"> However, the distributed training of an MoE model is prone to low efficiency, mainly due to the interleaved all-to-all communication during model computation. 
+                        This project makes three main contributions. First, we systematically analyze the all-to-all overhead in distributed training of MoE. Second, we propose a new communication scheduling scheme based on tensor partitioning that prioritizes the all-to-all operations over other communication, due to its blocking nature. Third, we introduce expert packing that reduces the all-to-all transfer size and incorporates optimiza- tions to mitigate its overheads. Both techniques effectively tackle the all-to-all bottleneck, and we integrate them into a new system called Lina. Experiments on an A100 GPU testbed show that Lina improves the training step time of popular NLP models by up to 1.73x over the state-of-the-art.</span> <button onclick="myFunction2()" id="myBtn2">more</button></p>
+                        </li>
+                </ul>
+                <h4>Simulation of large-scale distributed DNN training tasks (ongoing)</h4>
+                <ul>
+                        <li> <p>Collaborated with Microsoft Research Asia</p></li>
+                        <li> Merak, a simulation toolkit for estimating the step time of large-scale distributed DNN model. It can accurately simulate the communication operations in distributed training and the interference between communication operations and computation operations. </li>
+                </ul>
+                <h4>DNN Training Job Scheduling</h4>
+                <ul>
+                        <li> <p>Work completed at ByteDance. </p></li>
+                        <li><p>Lyra, an elastic GPU cluster scheduler for deep learning. The key idea is to exploit cluster-level elasticity by loaning idle inferences servers for training, and job-level elasticity by scaling jobs to better utilize the dynamic resource pool.</p></li>
+                        <li><p>Abstract: Organizations build separate training and inference GPU clusters for deep learning, and use separate schedulers to manage them. This leads to problems for both: inference clusters have low GPU utilization when the traffic load is low; training jobs often experience long queuing due to lack of resources.<span id="dots1">..</span><span id="more1"> We introduce Lyra, a new cluster scheduler to address these problems. Lyra introduces capacity loaning to loan idle inference GPU servers for training jobs. It further exploits elastic scaling that scales a training job’s GPU allocation to better utilize loaned resources. Capacity loaning and elastic scaling create new challenges to cluster management. When the loaned servers need to be returned, we need to minimize job preemptions; when more GPUs become available, we need to allocate them to elastic jobs and minimize the job completion time (JCT). Lyra addresses these combinatorial problems with principled heuristics. It introduces the notion of server preemption cost which it greedily reduces during server reclaiming. It further relies on the JCT reduction value defined for each additional worker for an elastic job to solve the scheduling problem as a multiple-choice knapsack problem. Prototype implementation on a 64-GPU testbed and large-scale simulation with 15-day traces of over 50,000 production jobs show that Lyra brings 1.53x and 1.50x reductions in average queuing time and JCT, and improves cluster usage by up to 26.9%. </span><button onclick="myFunction1()" id="myBtn1">more</button></p>
 
+                </ul>
+                
 
+                <h2>Teaching <font face="georgia, serif" size="3">
+                    
+                </font>
+                </h2>
+                <li>
+                        CS2311, Computer Programming, Sem A, 2022/2023<p></p>
+                </li>
+                <li>
+                        CS4296 & CS5296, Cloud Computing, Sem B, 2021/2022<p></p>
+                </li>
+                <li>
+                        CS4394 & CS5294, Information Security and Management, Sem A, 2021/2022<p></p>
+                </li>
+                <li>
+                        CS4293 & CS6290, Topics on Computer Security, Sem B, 2020/2021<p></p>
+                </li>
+                <li>
+                        CS5222, Computer Networks and Internets, Sem A, 2020/2021<p></p>
+                </li>
+    
+                <li>
+                    CS4296 & CS5296, Cloud Computing, Sem B, 2019/2020<p></p>
+                </li>
+                <li>
+                CS2311, Computer Programming, Sem A, 2019/2020<p></p>
+                </li>
+                <h2></h2>
+                
         </div>
-        <a href="https://anticold.github.io/ " target="_blank" style="display:none">Friend Link: J.W. Liu</a>
+
 </body>
-
-
 </html>
