@@ -48,6 +48,22 @@ body {
     vertical-align: top;
 }
 
+button {
+	font-family: Georgia, serif;
+	background-color: #ffffff; /* Green */
+	border: none;
+	color: #527bbd;
+	padding: 0px 0px;
+	text-align: center;
+	text-decoration: underline;
+	display: inline-block;
+	font-size: 100%;
+	cursor: pointer;
+}
+
+#more1 {display: none;}
+#more2 {display: none;}
+
 #layout-menu td {
 	background: #f4f4f4;
     vertical-align: top;
@@ -399,18 +415,3 @@ table.imgtable, table.imgtable td {
     text-align: left;
 }
 
-button {
-	font-family: Georgia, serif;
-	background-color: #ffffff; /* Green */
-	border: none;
-	color: #527bbd;
-	padding: 0px 0px;
-	text-align: center;
-	text-decoration: underline;
-	display: inline-block;
-	font-size: 100%;
-	cursor: pointer;
-}
-
-#more1 {display: none;}
-#more2 {display: none;}
