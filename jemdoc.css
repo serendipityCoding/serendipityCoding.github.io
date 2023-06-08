@@ -20,7 +20,7 @@ html {
 }
 
 body { 
-  font-family: Georgia, serif;
+  font-family: Palatino;
   color: #000;
   background-color: #ffffff; 
   text-align:left; /* for IE */
@@ -48,18 +48,6 @@ body {
     vertical-align: top;
 }
 
-button {
-	font-family: Georgia, serif;
-	background-color: #ffffff; /* Green */
-	border: none;
-	color: #527bbd;
-	padding: 0px 0px;
-	text-align: center;
-	text-decoration: underline;
-	display: inline-block;
-	font-size: 100%;
-	cursor: pointer;
-}
 
 #more1 {display: none;}
 #more2 {display: none;}
@@ -94,7 +82,7 @@ pre, tt {
 }
 
 a, a > tt {
-	color: #224b8d;
+	color: #0049a8;
 	text-decoration: none;
 }
 
@@ -107,7 +95,7 @@ a:hover {
 	border-bottom: 1px gray solid;
 }
 #layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
-	color: #527bbd;
+	color: #0049a8;
 	text-decoration: none;
 }
 #layout-menu a:hover {
@@ -154,7 +142,7 @@ strong {
 }
 
 h1 {
-	color: #527bbd;
+	color: #0049a8;
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	padding-bottom: 0.2em;
@@ -163,7 +151,7 @@ h1 {
 }
 
 h2, h3 {
-	color: #527bbd;
+	color: #0049a8;
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	padding-bottom: 0.2em;
