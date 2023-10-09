@@ -1,4 +1,4 @@
-/* Default css file for jemdoc. */
+/* Default css file for jemdoc. Palatino  */
 
 table#tlayout {
     border: none;
@@ -16,12 +16,12 @@ body {
 */
 
 html {
-  background-color: #eeeeee; 
+  background-color: #ffffff; 
 }
 
 body { 
   font-family: Palatino;
-  color: #000;
+  color: #333333;
   background-color: #ffffff; 
   text-align:left; /* for IE */
   margin-top: 30px; 
@@ -36,8 +36,8 @@ body {
 }
 
 #layout-menu {
-	background: #f6f6f6;
-	border: 1px solid #dddddd;
+	background: #aaaaaa;
+	border: 1px solid #aaaaaa;
 	padding-top: 0.5em;
 	padding-left: 8px;
 	padding-right: 8px;
@@ -53,7 +53,7 @@ body {
 #more2 {display: none;}
 
 #layout-menu td {
-	background: #f4f4f4;
+	background: #ffffff;
     vertical-align: top;
 }
 
@@ -73,16 +73,16 @@ body {
 }
 
 tt {
-    background: #ffffdd;
+    background: #ffffff;
 }
 
 pre, tt {
 	font-size: 90%;
-	font-family: monaco, monospace;
+	font-family: Palatino, monospace;
 }
 
 a, a > tt {
-	color: #0049a8;
+	color: #8a190a ;
 	text-decoration: none;
 }
 
@@ -95,7 +95,7 @@ a:hover {
 	border-bottom: 1px gray solid;
 }
 #layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
-	color: #0049a8;
+	color: #8a190a ;
 	text-decoration: none;
 }
 #layout-menu a:hover {
@@ -142,7 +142,7 @@ strong {
 }
 
 h1 {
-	color: #0049a8;
+	color: #8a190a ;
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	padding-bottom: 0.2em;
@@ -151,13 +151,13 @@ h1 {
 }
 
 h2, h3 {
-	color: #0049a8;
+	color: #8a190a ;
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	padding-bottom: 0.2em;
 	line-height: 1.0;
 	padding-top: 0.5em;
-	border-bottom: 1px solid #aaaaaa;
+	border-bottom: 1px dotted #111111;
 }
 
 h1 {
